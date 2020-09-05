@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>Update ToDo</h1>
+<div class="card offset-md-2 col-md-8">
+    <div class="card-title">New ToDo</div>
+    <div class="card-body">
+        <form method="post" action="/list/update">
+            <div class="form-group">
+                <input type="text" name="name" class="form-control" placeholder="Name" value="{{todo.name}}">
+                <input type="hidden" name="id" value="{{todo.id}}">
+                {{!-- <small id="emailHelp" class="form-text text-muted"></small> --}}
+            </div>
+            <label>
+                {{todo.dateline}}
+            </label> (OLD DATE)
+             <div class="form-group">
+                <input type="date" name="dateline" class="form-control" value="{{todo.dateline}}">
+            </div>
+            <div class="form-group">
+                <label for="description" class="control-label">Task Description</label>
+                <textarea name="description" id="description" class="form-control" rows="3">{{todo.description}}</textarea>
+                {{!-- <small id="emailHelp" class="form-text text-muted"></small> --}}
+            </div>
+
+            <div class="text-center">
+            <button type="submit" class="btn btn-primary align-center">Update</button>
+
+            </div>
+        </form>
+    </div>
+
+</div>
+</div>

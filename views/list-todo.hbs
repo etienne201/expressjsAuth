@@ -1,0 +1,37 @@
+ <div class="container"> 
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">DateLine</th>
+      <th scope="col">State</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each todos}}
+    <tr>
+      <th scope="row">#</th>
+      <td>{{this.name}}</td>
+      <td>{{this.description}}</td>
+      <td>{{this.dateline}}</td>
+      <td>
+        {{#if this.done }}
+        <span class="badge badge-success">Done</span>
+        {{else}}
+        <span class="badge badge-warning">Not Done</span>
+        <a class="badge badge-success" href="/done/{{this.id}}">Mark Done</a>
+        {{/if}}
+      </td>
+      <td>
+        <a href="/update/{{this.id}}" class="btn btn-primary btn-sm mx-2 my-2">Update</a>
+        <a href="/delete/{{this.id}}" class="btn btn-danger btn-sm  mx-2 my-2">Delete</a>
+      </td>
+    </tr>
+    {{/each}}
+
+  </tbody>
+</table>
+</div>
